@@ -8,6 +8,6 @@ module.exports = async (tools, labelName) => {
   return tools.github.issues.removeLabel({
     ...tools.context.repo,
     issue_number: tools.context.issue.number,
-    labels: [labelName]
+    name: labelName
   })
 }
