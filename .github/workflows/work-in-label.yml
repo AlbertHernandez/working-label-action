@@ -10,5 +10,6 @@ jobs:
       - uses: AlbertHernandez/working-label-action@master
         with:
           work_in_progress_label: 'Work in progress'
+          ready_to_review_label: 'Ready to review'
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
