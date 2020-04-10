@@ -9,6 +9,6 @@ module.exports = (tools, requiredParameters) => {
   });
 
   if (emptyRequiredValues.length === 0) {
-    tools.exit.failure('You forgot to provide some required values');
+    tools.exit.failure(`You forgot to provide some required values: [${emptyRequiredValues.split(', ')}]`);
   }
 };
