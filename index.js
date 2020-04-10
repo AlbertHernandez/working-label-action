@@ -10,10 +10,10 @@ Toolkit.run(async tools => {
   tools.log.info('Validating required parameters...');
   const emptyRequiredValues = validateRequiredParameters(tools, ['work_in_progress_label', 'ready_to_review_label']);
 
-  if (emptyRequiredValues.length) {
+  tools.log.info('emptyRequiredValues: ', emptyRequiredValues);
+  if (emptyRequiredValues.length === 0) {
     tools.exit.failure('You forgot to provide some required values');
   }
-
 
   tools.log.info('Running the action...');
   await runAction(tools);
