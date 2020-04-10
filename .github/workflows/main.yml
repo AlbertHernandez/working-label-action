@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Label work in progress
     steps:
-      - uses: AlbertHernandez/working-label-action@v1.0.2
+      - uses: AlbertHernandez/working-label-action@v1.1.2
+        with:
+          work_in_progress_label: 'Work in progress'
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
