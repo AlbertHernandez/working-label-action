@@ -5,7 +5,8 @@
  */
 module.exports = (tools, requiredParameters) => {
   const emptyRequiredValues = requiredParameters.filter(requiredParameter => {
-    return tools.inputs[requiredParameter] === undefined;
+    tools.log.info(`requiredParameter: ${requiredParameter} - value input: ${tools.inputs[requiredParameter]}`);
+    return !tools.inputs[requiredParameter];
   });
 
   if (emptyRequiredValues.length !== 0) {
