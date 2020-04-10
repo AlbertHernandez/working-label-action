@@ -1,6 +1,6 @@
 const createLabel = require('./github/create-label')
 const addLabel = require('./github/add-label')
-const removeLabel = require('src/github/remove-label')
+const removeLabel = require('./github/remove-label')
 
 module.exports = async tools => {
   const workInProgressLabel = tools.inputs.work_in_progress_label
