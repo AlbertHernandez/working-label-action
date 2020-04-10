@@ -4,4 +4,4 @@ COPY package*.json ./
 RUN npm ci
 COPY . .
 
-ENTRYPOINT ["node", "/run-action.js"]
+ENTRYPOINT ["node", "/index.js"]
