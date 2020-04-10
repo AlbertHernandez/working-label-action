@@ -6,11 +6,7 @@ module.exports = async tools => {
   const workInProgressLabel = tools.inputs.work_in_progress_label;
   const readyToReviewLabel = tools.inputs.ready_to_review_label;
 
-  await createLabel(tools, readyToReviewLabel);
-  await createLabel(tools, workInProgressLabel);
+  await Promise.all([createLabel(tools, readyToReviewLabel), createLabel(tools, workInProgressLabel)])
 
-  await removeLabel(tools, readyToReviewLabel);
-  await addLabel(tools, workInProgressLabel);
-
-  tools.log.success('Label successfully applied. Have a nice day!');
+  await Promise.all([removeLabel(tools, readyToReviewLabel), addLabel(tools, workInProgressLabel)])
 };
