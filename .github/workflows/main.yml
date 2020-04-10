@@ -1,0 +1,12 @@
+name: WorkInProgressLabel
+
+on: [pull_request]
+
+jobs:
+  labeler:
+    runs-on: ubuntu-latest
+    name: Label work in progress
+    steps:
+      - uses: AlbertHernandez/working-label-action@v1.0.2
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
