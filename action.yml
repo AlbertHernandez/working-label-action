@@ -1,5 +1,12 @@
 name: Working Label
 description: Add work in progress label when pull request is created
+inputs:
+  work_in_progress_label:
+    description: 'Label corresponding to work in progress'
+    required: true
+  ready_to_review_label:
+    description: 'Label corresponding to ready to review'
+    required: true
 runs:
   using: docker
   image: Dockerfile

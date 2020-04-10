@@ -1,4 +1,5 @@
 /**
+ * Create a label
  * @param {import('actions-toolkit').Toolkit} tools
  * @param {string} labelName
  * @param {object} options
@@ -10,9 +11,11 @@ module.exports = async (tools, labelName, options = {}) => {
       ...tools.context.repo,
       name: labelName,
       color: options.color || 'fedbf0',
-      request: { retries: 0 }
+      request: { retries: 0 },
     });
 
-    tools.log.debug(`Making label [${labelName}]`)
-  } catch {}
-}
+    tools.log.info(`Making label [${labelName}]`);
+  } catch (error) {
+    tools.log.info(`Error happens when we was creating the label: ${error}`);
+  }
+};
