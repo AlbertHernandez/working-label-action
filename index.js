@@ -7,8 +7,10 @@ const validateRequiredParameters = require('./src/validations/validate-required-
 
 Toolkit.run(async tools => {
 
-  validateRequiredParameters(tools, ['work_in_progress_label', 'ready_to_review_label'])
+  tools.log.info('Validating required parameters...');
+  validateRequiredParameters(tools, ['work_in_progress_label', 'ready_to_review_label']);
 
+  tools.log.info('Running the action...');
   await runAction(tools);
 
   tools.log.success('Label successfully applied!');
