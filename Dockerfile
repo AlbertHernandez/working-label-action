@@ -1,4 +1,4 @@
-FROM node:v10.16.0
+FROM node:10-alpine
 
 COPY package*.json ./
 RUN npm ci
