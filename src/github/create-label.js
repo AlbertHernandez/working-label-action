@@ -1,4 +1,5 @@
 /**
+ * Create a label
  * @param {import('actions-toolkit').Toolkit} tools
  * @param {string} labelName
  * @param {object} options
