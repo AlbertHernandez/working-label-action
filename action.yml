@@ -1,0 +1,8 @@
+name: Working Label
+description: Add work in progress label when pull request is created
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: user
+  color: gray-dark
