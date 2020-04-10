@@ -8,11 +8,7 @@ module.exports = (tools, requiredParameters) => {
     return tools.inputs[requiredParameter] === undefined;
   });
 
-  return emptyRequiredValues;
-
-  // tools.log.info('emptyRequiredValues: ', emptyRequiredValues);
-  //
-  // if (emptyRequiredValues.length) {
-  //   tools.exit.failure(`You forgot to provide some required values [${emptyRequiredValues.join(', ')}]`)
-  // }
+  if (emptyRequiredValues.length === 0) {
+    tools.exit.failure('You forgot to provide some required values');
+  }
 };
