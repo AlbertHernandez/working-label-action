@@ -14,6 +14,6 @@ module.exports = async (tools, labelName, options = {}) => {
       request: { retries: 0 }
     });
 
-    tools.log.debug(`Making label [${labelName}]`)
+    tools.log.info(`Making label [${labelName}]`)
   } catch {}
 }
