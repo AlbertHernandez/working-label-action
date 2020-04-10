@@ -4,6 +4,9 @@
  * @param {string[]} requiredParameters
  */
 module.exports = (tools, requiredParameters) => {
+  tools.log.info('tools.input: ', tools.inputs);
+  tools.log.info('requiredParameters: ', requiredParameters);
+
   const emptyRequiredValues = requiredParameters.filter(requiredParameter => {
     return tools.inputs[requiredParameter] === undefined;
   });
