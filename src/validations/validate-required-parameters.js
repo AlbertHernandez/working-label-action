@@ -4,12 +4,16 @@
  * @param {string[]} requiredParameters
  */
 module.exports = (tools, requiredParameters) => {
-  const emptyRequiredValues = requiredParameters.filter(requiredParameter => {
-    return !tools.inputs[requiredParameter];
-  });
+  const emptyRequiredValues = requiredParameters.filter(
+    requiredParameter => !tools.inputs[requiredParameter],
+  );
 
   if (emptyRequiredValues.length !== 0) {
-    tools.exit.failure(`You forgot to provide some required values: [${emptyRequiredValues.join(', ')}]`);
+    tools.exit.failure(
+      `You forgot to provide some required values: [${emptyRequiredValues.join(
+        ', ',
+      )}]`,
+    );
   }
 
 
