@@ -3,8 +3,8 @@ const addLabel = require('./github/add-label')
 const removeLabel = require('./github/remove-label')
 
 module.exports = async tools => {
-  const workInProgressLabel = tools.inputs.work_in_progress_label
-  const readyToReviewLabel = tools.inputs.ready_to_review_label
+  const workInProgressLabel = tools.inputs.work_in_progress_label;
+  const readyToReviewLabel = tools.inputs.ready_to_review_label;
 
   await createLabel(tools, readyToReviewLabel);
   await createLabel(tools, workInProgressLabel);
