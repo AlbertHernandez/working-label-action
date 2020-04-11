@@ -5,16 +5,26 @@
  */
 module.exports = async (tools, labelName) => {
   try {
-    const labelsOnIssue = await tools.github.issues.listLabelsForRepo({
+    const labelsForRepository = await tools.github.issues.listLabelsForRepo({
       ...tools.context.repo,
     });
-    tools.log.info(`labelsOnIssue: ${labelsOnIssue}`);
+    tools.log.info(`labelsForRepository: ${labelsForRepository}`);
 
-    return !!labelsOnIssue.find(labelOnIssue => {
-      return labelOnIssue.name === labelName;
+    const existLabel = !!labelsForRepository.find(label => {
+      return label.name === labelName;
     });
+
+    tools.log.info(
+      `The label [${labelName}] ${
+        existLabel ? 'already' : 'no'
+      } exists in the repository`,
+    );
+
+    return existLabel;
   } catch (error) {
-    tools.log.info(`Error happens when we was checking labels in the repository: ${error}`);
+    tools.log.info(
+      `Error happens when we was checking labels in the repository: ${error}`,
+    );
     return false;
   }
 };
