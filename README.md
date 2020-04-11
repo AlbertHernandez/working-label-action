@@ -1,6 +1,10 @@
 <h1 align="center">💼</h1>
 <h3 align="center">working-label-action</h3>
 
+<p align="center">
+    Add labels depending if the pull request is ready to review
+</p>
+
 ## Examples
 
 Imagine we have a project with some owners, each time we create a pull request the owners are automatically assigned as reviewers. In some cases we continue working on the pull request becase we found some issue, and we want to notify to the other members of the project that we are continue working on this which means we don't want their review at this moment since the code is going to change. Here is where this action comes to help us.

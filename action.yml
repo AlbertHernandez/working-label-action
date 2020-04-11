@@ -1,5 +1,5 @@
 name: Working Label
-description: Switch work in progress and ready to review label when a pull request is updated
+description: Add labels depending if the pull request is ready to review
 inputs:
   work_in_progress_label:
     description: 'Label corresponding to work in progress'
@@ -12,4 +12,4 @@ runs:
   image: Dockerfile
 branding:
   icon: user
-  color: gray-dark
+  color: green

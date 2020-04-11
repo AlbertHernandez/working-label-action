@@ -1,4 +1,4 @@
-name: Assign work in progress label when pull request is updated
+name: Add labels depending if the pull request is ready to review
 on: [pull_request]
 jobs:
   working_label:
