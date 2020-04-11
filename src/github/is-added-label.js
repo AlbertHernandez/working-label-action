@@ -5,10 +5,12 @@
  */
 module.exports = async (tools, labelName) => {
   try {
-    const labelsOnIssue = await tools.github.issues.listLabelsOnIssue({
-      ...tools.context.repo,
-      issue_number: tools.context.issue.number,
-    });
+    const { data: labelsOnIssue } = await tools.github.issues.listLabelsOnIssue(
+      {
+        ...tools.context.repo,
+        issue_number: tools.context.issue.number,
+      },
+    );
 
     tools.log.info(`labelsOnIssue: ${JSON.stringify(labelsOnIssue)}`);
 
