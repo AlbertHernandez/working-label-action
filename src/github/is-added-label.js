@@ -10,11 +10,23 @@ module.exports = async (tools, labelName) => {
       issue_number: tools.context.issue.number,
     });
 
-    return !!labelsOnIssue.find(labelOnIssue => {
+    tools.log.info(`labelsOnIssue: ${labelsOnIssue}`);
+
+    const isAddedLabel = !!labelsOnIssue.find(labelOnIssue => {
       return labelOnIssue.name === labelName;
     });
+
+    tools.log.info(
+      `The label [${labelName}] ${
+        isAddedLabel ? 'is' : 'is not'
+      } added in the pull request`,
+    );
+
+    return isAddedLabel;
   } catch (error) {
-    tools.log.info(`Error happens when we was checking if the label was added to the repository: ${error}`);
+    tools.log.info(
+      `Error happens when we was checking if the label was added to the repository: ${error}`,
+    );
     return false;
   }
 };
