@@ -4,10 +4,14 @@
  * @param {string} labelName
  */
 module.exports = async (tools, labelName) => {
-  tools.log.info(`Adding the label [${labelName}] to this pull request`);
-  return tools.github.issues.addLabels({
-    ...tools.context.repo,
-    issue_number: tools.context.issue.number,
-    labels: [labelName],
-  });
+  try {
+    tools.log.info(`Adding the label [${labelName}]`);
+    await tools.github.issues.addLabels({
+      ...tools.context.repo,
+      issue_number: tools.context.issue.number,
+      labels: [labelName],
+    });
+  } catch (error) {
+    tools.log.info(`Error happens when we was adding the label: ${error}`);
+  }
 };
