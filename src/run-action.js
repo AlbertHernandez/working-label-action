@@ -3,6 +3,7 @@ const addLabel = require('./github/add-label');
 const removeLabel = require('./github/remove-label');
 
 module.exports = async tools => {
+  tools.log.info('Hello from dev');
   const workInProgressLabel = tools.inputs.work_in_progress_label;
   const readyToReviewLabel = tools.inputs.ready_to_review_label;
 
