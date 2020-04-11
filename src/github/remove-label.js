@@ -4,10 +4,14 @@
  * @param {string} labelName
  */
 module.exports = async (tools, labelName) => {
-  tools.log.info(`Removing the label [${labelName}]`);
-  return tools.github.issues.removeLabel({
-    ...tools.context.repo,
-    issue_number: tools.context.issue.number,
-    name: labelName,
-  });
+  try {
+    tools.log.info(`Removing the label [${labelName}]`);
+    await tools.github.issues.removeLabel({
+      ...tools.context.repo,
+      issue_number: tools.context.issue.number,
+      name: labelName,
+    });
+  } catch (error) {
+    tools.log.info(`Error happens when we was removing the label: ${error}`);
+  }
 };

@@ -7,14 +7,13 @@
  */
 module.exports = async (tools, labelName, options = {}) => {
   try {
+    tools.log.info(`Making label [${labelName}]`);
     await tools.github.issues.createLabel({
       ...tools.context.repo,
       name: labelName,
       color: options.color || 'fedbf0',
       request: { retries: 0 },
     });
-
-    tools.log.info(`Making label [${labelName}]`);
   } catch (error) {
     tools.log.info(`Error happens when we was creating the label: ${error}`);
   }
