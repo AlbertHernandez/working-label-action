@@ -5,10 +5,14 @@
  */
 module.exports = async (tools, labelName) => {
   try {
-    const labelsForRepository = await tools.github.issues.listLabelsForRepo({
+    const {
+      data: labelsForRepository,
+    } = await tools.github.issues.listLabelsForRepo({
       ...tools.context.repo,
     });
-    tools.log.info(`labelsForRepository: ${JSON.stringify(labelsForRepository)}`);
+    tools.log.info(
+      `labelsForRepository: ${JSON.stringify(labelsForRepository)}`,
+    );
 
     const existLabel = !!labelsForRepository.find(label => {
       return label.name === labelName;
