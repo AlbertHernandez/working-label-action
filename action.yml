@@ -1,5 +1,5 @@
 name: Working Label
-description: Add work in progress label when pull request is created
+description: Switch work in progress and ready to review label when a pull request is updated
 inputs:
   work_in_progress_label:
     description: 'Label corresponding to work in progress'

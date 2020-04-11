@@ -1,13 +1,11 @@
-name: WorkInProgressLabel
-
+name: Assign work in progress label when pull request is updated
 on: [pull_request]
-
 jobs:
-  labeler:
+  working_label:
     runs-on: ubuntu-latest
-    name: Label work in progress
+    name: Label working progress
     steps:
-      - uses: AlbertHernandez/working-label-action@master
+      - uses: AlbertHernandez/working-label-action@v1.0.0
         with:
           work_in_progress_label: 'Work in progress'
           ready_to_review_label: 'Ready to review'
