@@ -10,7 +10,7 @@ module.exports = async (tools, labelName) => {
       issue_number: tools.context.issue.number,
     });
 
-    tools.log.info(`labelsOnIssue: ${labelsOnIssue}`);
+    tools.log.info(`labelsOnIssue: ${JSON.stringify(labelsOnIssue)}`);
 
     const isAddedLabel = !!labelsOnIssue.find(labelOnIssue => {
       return labelOnIssue.name === labelName;
@@ -25,7 +25,7 @@ module.exports = async (tools, labelName) => {
     return isAddedLabel;
   } catch (error) {
     tools.log.info(
-      `Error happens when we was checking if the label was added to the repository: ${error}`,
+      `Error happens when we was checking if the label [${labelName}] was added to the repository: ${error}`,
     );
     return false;
   }
