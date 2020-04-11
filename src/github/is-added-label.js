@@ -1,4 +1,4 @@
-/**
+/** async
  * Check if the label is added in the pull request
  * @param {import('actions-toolkit').Toolkit} tools
  * @param {string} labelName

@@ -1,9 +1,15 @@
+const isAddedLabel = require('./is-added-label');
+
 /**
  * Add labels to an issue
  * @param {import('actions-toolkit').Toolkit} tools
  * @param {string} labelName
  */
 module.exports = async (tools, labelName) => {
+  if (await isAddedLabel(tools, labelName)) {
+    return;
+  }
+
   try {
     tools.log.info(`Adding the label [${labelName}]`);
     await tools.github.issues.addLabels({
