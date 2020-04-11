@@ -8,6 +8,7 @@ module.exports = async (tools, labelName) => {
     const labelsOnIssue = await tools.github.issues.listLabelsForRepo({
       ...tools.context.repo,
     });
+    tools.log.info(`labelsOnIssue: ${labelsOnIssue}`);
 
     return !!labelsOnIssue.find(labelOnIssue => {
       return labelOnIssue.name === labelName;
