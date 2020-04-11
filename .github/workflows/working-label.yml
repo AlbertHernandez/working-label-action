@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Label working progress
     steps:
-      - uses: AlbertHernandez/working-label-action@v1.0.0
+      - uses: AlbertHernandez/working-label-action@v1.0.3
         with:
           work_in_progress_label: 'Work in progress'
           ready_to_review_label: 'Ready to review'
